@@ -1,0 +1,222 @@
+*{
+ box-sizing: border-box;
+}
+
+body{
+  background-color: hsl(240, 78%, 98%);
+  color: hsl(232, 13%, 33%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  min-height: 90vh;  
+}
+
+body::before{
+  content: "";
+  background-image: url('./images/bg-top.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+body::after{
+  content: "";
+  background-image: url('./images/bg-bottom.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.container{
+ margin: auto;
+ max-width: 100%;
+ width: 1200px;
+}
+
+.flex{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+h1{
+ color: hsl(233, 13%, 49%);
+}
+
+.price-box{
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  color: hsl(233, 13%, 49%);
+}
+
+.price-box h4{
+  margin: 0;
+}
+
+.price-box p{
+  color: hsl(232, 13%, 33%);
+  font-size: 4rem;
+  margin: 15px 0;
+  width: 250px;
+}
+
+.price-box ul{
+  border-top: 1px solid  hsl(234, 14%, 74%);
+  padding: 0;
+  list-style-type: none;
+}
+
+.price-box ul li{
+  /* color: hsl(233, 13%, 49%); */
+ border-bottom: 1px solid  hsl(234, 14%, 74%);
+ padding: 15px 0;
+ font-size: 14px;
+}
+
+.price-box button{
+  background-image: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  color: white;
+  padding: 15px;
+  margin-top: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+} 
+
+.price-box.price-box22{
+  background-image: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+  color: white;
+  transform: scale(1.15);
+}
+
+.price-box.price-box22 > *{
+  transform: scale(0.888);
+}
+
+.price-box.price-box22 button{
+  background-image: none;
+  background-color: white;
+  color:hsl(237, 63%, 64%);
+}
+
+.price-box.price-box22 ul, 
+.price-box.price-box22 ul li{
+  border-color: rgb(253, 249, 249);
+}
+
+.price-box.price-box22 p{
+  color: rgb(253, 249, 249);
+}
+
+/* JS part  */
+/* .price-box .monthly{
+  background-color: red;
+  display: block;
+}
+
+.show-monthly .price-box .monthly{
+  background-color: blue;
+  display: none;
+}
+
+.show-monthly .price-box .annually{
+  background-color: gold;
+  display: block;
+} */
+
+.price-box #ann{
+  /* background-color: white;
+  color: black; */
+  display: block;
+
+}
+.show-monthly .price-box .monthly{
+  /* background-color: rgb(245, 245, 250);
+  color: black; */
+  display: none;
+}
+.show-monthly .price-box #ann{
+  /* background-color: rgb(253, 253, 255);
+  color: black; */
+  display: block;
+}
+
+
+.price-box #ann{
+  transition: 0.3s ease black;
+}
+
+
+/* pill toggle  */
+
+.toggle-container{
+  color: hsl(234, 14%, 74%);
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.toggle-container label{
+  background-image: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+  display: inline-block;
+  position: relative;
+  height: 30px;;
+  width: 50px;
+  margin: 0 15px;
+  border-radius: 50px;
+}
+
+.toggle-container label .ball{
+  background-color: white;
+     border-radius: 50%;
+     position: absolute;
+     top: 2.5px;
+     left: 2.5px;
+     height: 25px ;
+     width: 25px;
+     transition: transform 0.6s ease;
+     cursor: pointer;
+}
+
+.toggle-container input{
+  position: absolute;
+  left: -100px;
+}
+
+.toggle-container input:checked + label .ball{
+  /* left: auto;
+  right: 2.5px; */
+  transform: translate(21px);
+}
+
+@media screen and (max-width: 900px) {
+  .flex{
+    flex-direction: column;
+  }
+  .price-box.price-box22 {
+    transform: scale(1);
+  }
+  .price-box.price-box22  > *{
+    transform: scale(1);
+  }
+}
